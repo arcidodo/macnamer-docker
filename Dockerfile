@@ -24,7 +24,7 @@ RUN apt-get -y install \
     python-dev \
     && easy_install pip
 
-RUN git clone https://github.com/grahamgilbert/macnamer.git $APP_DIR
+RUN git clone https://github.com/arcidodo/macnamer.git $APP_DIR
 RUN pip install -r $APP_DIR/setup/requirements.txt
 # RUN pip install psycopg2==2.5.3
 RUN mkdir -p /etc/my_init.d
