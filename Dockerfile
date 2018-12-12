@@ -7,13 +7,14 @@ MAINTAINER Graham Gilbert <graham@grahamgilbert.com>
 ENV HOME /root
 #ENV DEBIAN_FRONTEND noninteractive
 ENV APP_DIR /home/app/macnamer
-ENV TZ Europe/London
-ENV DOCKER_MACNAMER_TZ Europe/London
+ENV TZ Europe/Amsterdam
+ENV DOCKER_MACNAMER_TZ Europe/Amsterdam
 ENV DOCKER_MACNAMER_ADMINS Docker User, docker@localhost
-ENV DOCKER_MACNAMER_LANG en_GB
+ENV DOCKER_MACNAMER_LANG nl_NL
 
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]
+RUN rm /etc/apt/sources.list.d/redis.list
 RUN apt-get -y update
 RUN /build/utilities.sh
 RUN /build/python.sh
